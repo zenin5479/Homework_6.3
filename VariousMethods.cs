@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace LibraryForStruct
+namespace Homework_6._3
 {
    public class VariousMethods
    {
