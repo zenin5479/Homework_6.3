@@ -61,7 +61,7 @@ namespace Homework_6._3
                }
 
                сolumnArray[countRow] = countСolumn;
-               // 10 количество полей в структуре
+               // 3 количество полей в структуре
                if (countСolumn != 3)
                {
                   Console.WriteLine("Неверный формат строки {0}", countRow);
@@ -149,15 +149,15 @@ namespace Homework_6._3
       }
 
       // Метод записи массива структур в бинарный файл
-      public static void WriteStructFileBin(string path, Business[] students)
+      public static void WriteStructFileBin(string path, Business[] firm)
       {
          FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         writer.Write(students.Length);
+         writer.Write(firm.Length);
          int i = 0;
-         while (i < students.Length)
+         while (i < firm.Length)
          {
-            Business person = students[i];
+            Business person = firm[i];
             // Запись строки в UTF-8 с предварительной длиной
             writer.Write(person.Company);
             writer.Write(person.Department);
@@ -175,47 +175,35 @@ namespace Homework_6._3
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          int length = reader.ReadInt32();
-         Business[] persons = new Business[length];
+         Business[] firm = new Business[length];
          int i = 0;
          while (i < length)
          {
-            string group = reader.ReadString();
-            string surname = reader.ReadString();
-            string name = reader.ReadString();
-            persons[i] = new Business
-            {
-               Company = group,
-               Department = surname,
-               Profit = Convert.ToDouble(name)
-              
-            };
-
+            string company = reader.ReadString();
+            string department = reader.ReadString();
+            double profit = reader.ReadDouble();
+            firm[i] = new Business { Company = company, Department = department, Profit = profit };
             i++;
          }
 
          stream.Close();
          reader.Close();
-         return persons;
+         return firm;
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
-      public static double AverageScore(Business[] students)
+      public static double AverageScore(Business[] firm)
       {
          double medium;
          double allSubjects = 0;
          int i = 0;
-         while (i < students.Length)
+         while (i < firm.Length)
          {
-            double bySubjects = ((students[i].Profit + students[i].Profit + students[i].Profit) / 3.0f);
+            double bySubjects = firm[i].Profit;
             allSubjects += bySubjects;
-            //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
-            //   students[i].Surname, students[i].Name, bySubjects);
-            Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
-               students[i].Department, students[i].Profit, bySubjects);
-            i++;
          }
 
-         medium = allSubjects / students.Length;
+         medium = allSubjects / firm.Length;
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
          return medium;
       }
