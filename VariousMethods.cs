@@ -7,14 +7,14 @@ namespace Homework_6._3
    public class VariousMethods
    {
       // Метод записи массива структур в текстовый файл
-      public static void WriteStructFileTxt(string path, Business[] students)
+      public static void WriteStructFileTxt(string path, Business[] firm)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
          int i = 0;
-         while (i < students.Length)
+         while (i < firm.Length)
          {
-            Business person = students[i];
+            Business person = firm[i];
             writer.WriteLine("{0} {1} {2}", person.Company, person.Department, person.Profit);
             i++;
          }
