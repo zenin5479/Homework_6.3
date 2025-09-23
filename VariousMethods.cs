@@ -265,7 +265,7 @@ namespace Homework_6._3
       {
          Console.WriteLine("Несовершеннолетние студенты:");
          // Возраст совершеннолетнего студента
-         int underage = 20;
+         double underage = 20;
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
@@ -284,7 +284,7 @@ namespace Homework_6._3
          int k = 0;
          while (j < firm.Length)
          {
-            if (firm[i].Profit < underage)
+            if (firm[j].Profit < underage)
             {
                minor[k] = firm[j];
                Console.WriteLine("{0} {1} {2}", firm[j].Company, firm[j].Department, firm[j].Profit);
@@ -300,7 +300,7 @@ namespace Homework_6._3
          double bySubjects;
          while (l < minor.Length)
          {
-            bySubjects = ((minor[l].Profit + minor[l].Profit + minor[l].Profit) / 3.0f);
+            bySubjects = minor[l].Profit;
             average[l] = bySubjects;
             l++;
          }
@@ -319,7 +319,7 @@ namespace Homework_6._3
          }
 
          Console.WriteLine("Худший средний балл: {0:f}", min);
-         //Console.WriteLine("Худший средний балл: {0:f2}", min);
+         Console.WriteLine("Худший средний балл: {0:f2}", min);
 
          // Поиск индекса минимума массива
          int n = 0;
@@ -335,11 +335,11 @@ namespace Homework_6._3
             }
 
             // Сравниваем значения double используя метод Equals(Double)
-            if (average[n].Equals(min))
-            {
-               counter = n;
-               flag = true;
-            }
+            //if (average[n].Equals(min))
+            //{
+            //   counter = n;
+            //   flag = true;
+            //}
 
             n++;
          }
@@ -351,14 +351,12 @@ namespace Homework_6._3
 
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
          Business worstAverage = minor[counter];
-         Console.WriteLine("{0} {1} {2}",
-            worstAverage.Company, worstAverage.Department, worstAverage.Profit);
+         Console.WriteLine("{0} {1} {2}", worstAverage.Company, worstAverage.Department, worstAverage.Profit);
 
          // Запись структуры в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-         writer.WriteLine("{0} {1} {2}",
-            worstAverage.Company, worstAverage.Department, worstAverage.Profit);
+         writer.WriteLine("{0} {1} {2}", worstAverage.Company, worstAverage.Department, worstAverage.Profit);
          writer.Close();
       }
 
