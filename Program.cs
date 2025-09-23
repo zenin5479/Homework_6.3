@@ -21,7 +21,7 @@ namespace Homework_6._3
    {
       public string Company;
       public string Department;
-      public string Name;
+      public string Profit;
       public string Dadsname;
       public int Year;
       public char Gender;
@@ -48,52 +48,52 @@ namespace Homework_6._3
          {
             new Business
             {
-               Company = "IP-21", Department = "Иванов", Name = "Иван", Dadsname = "Иванович",
+               Company = "IP-21", Department = "Иванов", Profit = "Иван", Dadsname = "Иванович",
                Year = 2000, Gender = 'М', Physics = 4, Math = 5, Inf = 3, Grant = 5000
             },
             new Business
             {
-               Company = "IP-21", Department = "Петрова", Name = "Анна", Dadsname = "Сергеевна",
+               Company = "IP-21", Department = "Петрова", Profit = "Анна", Dadsname = "Сергеевна",
                Year = 2001, Gender = 'Ж', Physics = 5, Math = 4, Inf = 5, Grant = 6000
             },
             new Business
             {
-               Company = "IP-22", Department = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
+               Company = "IP-22", Department = "Смирнов", Profit = "Алексей", Dadsname = "Викторович",
                Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
             },
             new Business
             {
-               Company = "Fiz-21", Department = "Кузнецова", Name = "Мария", Dadsname = "Павловна",
+               Company = "Fiz-21", Department = "Кузнецова", Profit = "Мария", Dadsname = "Павловна",
                Year = 2000, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 7000
             },
             new Business
             {
-               Company = "Phys-22", Department = "Сидоров", Name = "Дмитрий", Dadsname = "Андреевич",
+               Company = "Phys-22", Department = "Сидоров", Profit = "Дмитрий", Dadsname = "Андреевич",
                Year = 2001, Gender = 'M', Physics = 4, Math = 3, Inf = 4, Grant = 4500
             },
             new Business
             {
-               Company = "IP-22", Department = "Васильева", Name = "Екатерина", Dadsname = "Николаевна",
+               Company = "IP-22", Department = "Васильева", Profit = "Екатерина", Dadsname = "Николаевна",
                Year = 2008, Gender = 'Ж', Physics = 3, Math = 3, Inf = 3, Grant = 3000
             },
             new Business
             {
-               Company = "Fiz-21", Department = "Орлов", Name = "Сергей", Dadsname = "Владимирович",
+               Company = "Fiz-21", Department = "Орлов", Profit = "Сергей", Dadsname = "Владимирович",
                Year = 2000, Gender = 'M', Physics = 4, Math = 4, Inf = 3, Grant = 3000
             },
             new Business
             {
-               Company = "IP-21", Department = "Лебедева", Name = "Светлана", Dadsname = "Александровна",
+               Company = "IP-21", Department = "Лебедева", Profit = "Светлана", Dadsname = "Александровна",
                Year = 2001, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 8000
             },
             new Business
             {
-               Company = "Fiz-22", Department = "Николаев", Name = "Андрей", Dadsname = "Сергеевич",
+               Company = "Fiz-22", Department = "Николаев", Profit = "Андрей", Dadsname = "Сергеевич",
                Year = 2008, Gender = 'M', Physics = 3, Math = 2, Inf = 3, Grant = 2500
             },
             new Business
             {
-               Company = "IP-22", Department = "Сергеева", Name = "Дарья", Dadsname = "Викторовна",
+               Company = "IP-22", Department = "Сергеева", Profit = "Дарья", Dadsname = "Викторовна",
                Year = 2008, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 2000
             }
          };
@@ -108,7 +108,7 @@ namespace Homework_6._3
          {
             Business student = readStudents[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               student.Company, student.Department, student.Name, student.Dadsname, student.Year,
+               student.Company, student.Department, student.Profit, student.Dadsname, student.Year,
                student.Gender, student.Physics, student.Math, student.Inf, student.Grant);
             i++;
          }
@@ -125,7 +125,7 @@ namespace Homework_6._3
          {
             Business cadet = readCadets[j];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               cadet.Company, cadet.Department, cadet.Name, cadet.Dadsname, cadet.Year,
+               cadet.Company, cadet.Department, cadet.Profit, cadet.Dadsname, cadet.Year,
                cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
             j++;
          }
