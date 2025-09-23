@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 // Обработка данных сложной структуры
 // Заданы структура данных и требуемый результат
@@ -34,7 +35,109 @@ namespace Homework_6._3
    {
       static void Main(string[] args)
       {
-         Console.WriteLine("Hello World!");
+         string fileEnter = "spisok.txt";
+         string pathStruct = Path.GetFullPath(fileEnter);
+         string writeStruct = "writestruct.bin";
+         string pathWrite = Path.GetFullPath(writeStruct);
+         string readStruct = "readstruct.bin";
+         string pathRead = Path.GetFullPath(readStruct);
+         string fileInput = "finish.txt";
+
+         // Создание массива структур
+         Student[] students =
+         {
+            new Student
+            {
+               Group = "IP-21", Surname = "Иванов", Name = "Иван", Dadsname = "Иванович",
+               Year = 2000, Gender = 'М', Physics = 4, Math = 5, Inf = 3, Grant = 5000
+            },
+            new Student
+            {
+               Group = "IP-21", Surname = "Петрова", Name = "Анна", Dadsname = "Сергеевна",
+               Year = 2001, Gender = 'Ж', Physics = 5, Math = 4, Inf = 5, Grant = 6000
+            },
+            new Student
+            {
+               Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
+               Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
+            },
+            new Student
+            {
+               Group = "Fiz-21", Surname = "Кузнецова", Name = "Мария", Dadsname = "Павловна",
+               Year = 2000, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 7000
+            },
+            new Student
+            {
+               Group = "Phys-22", Surname = "Сидоров", Name = "Дмитрий", Dadsname = "Андреевич",
+               Year = 2001, Gender = 'M', Physics = 4, Math = 3, Inf = 4, Grant = 4500
+            },
+            new Student
+            {
+               Group = "IP-22", Surname = "Васильева", Name = "Екатерина", Dadsname = "Николаевна",
+               Year = 2008, Gender = 'Ж', Physics = 3, Math = 3, Inf = 3, Grant = 3000
+            },
+            new Student
+            {
+               Group = "Fiz-21", Surname = "Орлов", Name = "Сергей", Dadsname = "Владимирович",
+               Year = 2000, Gender = 'M', Physics = 4, Math = 4, Inf = 3, Grant = 3000
+            },
+            new Student
+            {
+               Group = "IP-21", Surname = "Лебедева", Name = "Светлана", Dadsname = "Александровна",
+               Year = 2001, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 8000
+            },
+            new Student
+            {
+               Group = "Fiz-22", Surname = "Николаев", Name = "Андрей", Dadsname = "Сергеевич",
+               Year = 2008, Gender = 'M', Physics = 3, Math = 2, Inf = 3, Grant = 2500
+            },
+            new Student
+            {
+               Group = "IP-22", Surname = "Сергеева", Name = "Дарья", Dadsname = "Викторовна",
+               Year = 2008, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 2000
+            }
+         };
+         // Запись массива структур в текстовый файл
+         VariousMethods.WriteStructFileTxt(pathStruct, students);
+         // Чтение массива структур из текстового файла
+         Student[] readStudents = VariousMethods.ReadStructFileTxt(pathStruct, "spisok.txt");
+         // Вывод прочитанных данных
+         Console.WriteLine("Прочитанные данные из текстового файла:");
+         int i = 0;
+         while (i < readStudents.Length)
+         {
+            Student student = readStudents[i];
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               student.Group, student.Surname, student.Name, student.Dadsname, student.Year,
+               student.Gender, student.Physics, student.Math, student.Inf, student.Grant);
+            i++;
+         }
+
+         Console.WriteLine();
+         // Запись массива структур в бинарный файл
+         VariousMethods.WriteStructFileBin(pathWrite, readStudents);
+         // Чтение массива структур из бинарного файла
+         Student[] readCadets = VariousMethods.ReadStructFileBin(pathWrite);
+         // Вывод прочитанных данных
+         Console.WriteLine("Прочитанные данные из бинарного файла:");
+         int j = 0;
+         while (j < readCadets.Length)
+         {
+            Student cadet = readCadets[j];
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               cadet.Group, cadet.Surname, cadet.Name, cadet.Dadsname, cadet.Year,
+               cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
+            j++;
+         }
+         // Расчет среднего балла всех студентов по всем предметам
+         Console.WriteLine();
+         double average = VariousMethods.AverageScore(students);
+         // Поиск студентов средний балл которых выше, чем общий средний балл
+         Console.WriteLine();
+         VariousMethods.AverageHigherScore(pathRead, students, average);
+         // Поиск несовершеннолетнего студента с худшим средним баллом
+         Console.WriteLine();
+         VariousMethods.MinorStudentWorstAverage(fileInput, students);
       }
    }
 }
