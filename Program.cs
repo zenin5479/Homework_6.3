@@ -35,7 +35,7 @@ namespace Homework_6._3
    {
       static void Main(string[] args)
       {
-         string fileEnter = "spisok.txt";
+         string fileEnter = "hardstructure.txt";
          string pathStruct = Path.GetFullPath(fileEnter);
          string writeStruct = "writestruct.bin";
          string pathWrite = Path.GetFullPath(writeStruct);
