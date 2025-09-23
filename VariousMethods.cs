@@ -209,15 +209,15 @@ namespace Homework_6._3
       }
 
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
-      public static void AverageHigherScore(string path, Business[] student, double medium)
+      public static void AverageHigherScore(string path, Business[] firm, double medium)
       {
          Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
-         while (i < student.Length)
+         while (i < firm.Length)
          {
-            double bySubjects = ((student[i].Profit + student[i].Profit + student[i].Profit) / 3.0f);
+            double bySubjects = firm[i].Profit;
             if (bySubjects > medium)
             {
                count++;
@@ -229,13 +229,13 @@ namespace Homework_6._3
          Business[] averageHigher = new Business[count];
          int j = 0;
          int k = 0;
-         while (j < student.Length)
+         while (j < firm.Length)
          {
-            double bySubjects = ((student[j].Profit + student[j].Profit + student[j].Profit) / 3.0f);
+            double bySubjects = firm[j].Profit;
             if (bySubjects > medium)
             {
-               averageHigher[k] = student[j];
-               Console.WriteLine("{0} {1}", student[j].Department, student[j].Profit);
+               averageHigher[k] = firm[j];
+               Console.WriteLine("{0} {1}", firm[j].Department, firm[j].Profit);
                k++;
             }
 

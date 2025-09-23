@@ -116,8 +116,8 @@ namespace Homework_6._3
          Console.WriteLine();
          VariousMethods.AverageHigherScore(pathRead, firm, average);
          // Поиск несовершеннолетнего студента с худшим средним баллом
-         Console.WriteLine();
-         VariousMethods.MinorStudentWorstAverage(fileInput, firm);
+         //Console.WriteLine();
+         //VariousMethods.MinorStudentWorstAverage(fileInput, firm);
       }
    }
 }
