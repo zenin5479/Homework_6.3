@@ -182,25 +182,12 @@ namespace Homework_6._3
             string group = reader.ReadString();
             string surname = reader.ReadString();
             string name = reader.ReadString();
-            string dadsname = reader.ReadString();
-            int year = reader.ReadInt32();
-            char gender = reader.ReadChar();
-            int physics = reader.ReadInt32();
-            int Math = reader.ReadInt32();
-            int inf = reader.ReadInt32();
-            double grant = reader.ReadDouble();
             persons[i] = new Business
             {
                Company = group,
                Department = surname,
-               Profit = name,
-               Dadsname = dadsname,
-               Year = year,
-               Gender = gender,
-               Physics = physics,
-               Math = Math,
-               Inf = inf,
-               Grant = grant
+               Profit = Convert.ToDouble(name)
+              
             };
 
             i++;
@@ -219,7 +206,7 @@ namespace Homework_6._3
          int i = 0;
          while (i < students.Length)
          {
-            double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
+            double bySubjects = ((students[i].Profit + students[i].Profit + students[i].Profit) / 3.0f);
             allSubjects += bySubjects;
             //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
             //   students[i].Surname, students[i].Name, bySubjects);
@@ -242,7 +229,7 @@ namespace Homework_6._3
          int i = 0;
          while (i < student.Length)
          {
-            double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
+            double bySubjects = ((student[i].Profit + student[i].Profit + student[i].Profit) / 3.0f);
             if (bySubjects > medium)
             {
                count++;
@@ -256,7 +243,7 @@ namespace Homework_6._3
          int k = 0;
          while (j < student.Length)
          {
-            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+            double bySubjects = ((student[j].Profit + student[j].Profit + student[j].Profit) / 3.0f);
             if (bySubjects > medium)
             {
                averageHigher[k] = student[j];
