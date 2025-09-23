@@ -21,14 +21,7 @@ namespace Homework_6._3
    {
       public string Company;
       public string Department;
-      public string Profit;
-      public string Dadsname;
-      public int Year;
-      public char Gender;
-      public int Physics;
-      public int Math;
-      public int Inf;
-      public double Grant;
+      public double Profit;
    }
 
    internal class Program
