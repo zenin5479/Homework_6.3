@@ -25,7 +25,7 @@ namespace Homework_6._3
       // Метод чтения массива структур из текстового файла
       public static Business[] ReadStructFileTxt(string path, string nameFile)
       {
-         Business[] arrayStudent = { };
+         Business[] arrayFirm = { };
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path, Encoding.UTF8);
          if (allLines == null || allLines.Length == 0)
@@ -36,7 +36,7 @@ namespace Homework_6._3
          else
          {
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
-            arrayStudent = new Business[allLines.Length];
+            arrayFirm = new Business[allLines.Length];
             int[] сolumnArray = new int[allLines.Length];
             char symbolSpace = ' ';
             int countRow = 0;
@@ -62,7 +62,7 @@ namespace Homework_6._3
 
                сolumnArray[countRow] = countСolumn;
                // 10 количество полей в структуре
-               if (countСolumn != 10)
+               if (countСolumn != 3)
                {
                   Console.WriteLine("Неверный формат строки {0}", countRow);
                }
@@ -133,9 +133,9 @@ namespace Homework_6._3
                      countCharacter++;
                   }
 
-                  arrayStudent[row].Company = lineArray[0];
-                  arrayStudent[row].Department = lineArray[1];
-                  arrayStudent[row].Profit = Convert.ToDouble(lineArray[2]);
+                  arrayFirm[row].Company = lineArray[0];
+                  arrayFirm[row].Department = lineArray[1];
+                  arrayFirm[row].Profit = Convert.ToDouble(lineArray[2]);
 
                   countCharacter = 0;
                }
@@ -145,7 +145,7 @@ namespace Homework_6._3
             }
          }
 
-         return arrayStudent;
+         return arrayFirm;
       }
 
       // Метод записи массива структур в бинарный файл
