@@ -7,14 +7,14 @@ namespace Homework_6._3
    public class VariousMethods
    {
       // Метод записи массива структур в текстовый файл
-      public static void WriteStructFileTxt(string path, Student[] students)
+      public static void WriteStructFileTxt(string path, Business[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
          int i = 0;
          while (i < students.Length)
          {
-            Student person = students[i];
+            Business person = students[i];
             writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
@@ -25,9 +25,9 @@ namespace Homework_6._3
       }
 
       // Метод чтения массива структур из текстового файла
-      public static Student[] ReadStructFileTxt(string path, string nameFile)
+      public static Business[] ReadStructFileTxt(string path, string nameFile)
       {
-         Student[] arrayStudent = { };
+         Business[] arrayStudent = { };
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path, Encoding.UTF8);
          if (allLines == null || allLines.Length == 0)
@@ -38,7 +38,7 @@ namespace Homework_6._3
          else
          {
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
-            arrayStudent = new Student[allLines.Length];
+            arrayStudent = new Business[allLines.Length];
             int[] сolumnArray = new int[allLines.Length];
             char symbolSpace = ' ';
             int countRow = 0;
@@ -158,7 +158,7 @@ namespace Homework_6._3
       }
 
       // Метод записи массива структур в бинарный файл
-      public static void WriteStructFileBin(string path, Student[] students)
+      public static void WriteStructFileBin(string path, Business[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
@@ -166,7 +166,7 @@ namespace Homework_6._3
          int i = 0;
          while (i < students.Length)
          {
-            Student person = students[i];
+            Business person = students[i];
             // Запись строки в UTF-8 с предварительной длиной
             writer.Write(person.Group);
             writer.Write(person.Surname);
@@ -186,12 +186,12 @@ namespace Homework_6._3
       }
 
       // Метод чтения массива структур из бинарного файла
-      public static Student[] ReadStructFileBin(string path)
+      public static Business[] ReadStructFileBin(string path)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          int length = reader.ReadInt32();
-         Student[] persons = new Student[length];
+         Business[] persons = new Business[length];
          int i = 0;
          while (i < length)
          {
@@ -205,7 +205,7 @@ namespace Homework_6._3
             int Math = reader.ReadInt32();
             int inf = reader.ReadInt32();
             double grant = reader.ReadDouble();
-            persons[i] = new Student
+            persons[i] = new Business
             {
                Group = group,
                Surname = surname,
@@ -228,7 +228,7 @@ namespace Homework_6._3
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
-      public static double AverageScore(Student[] students)
+      public static double AverageScore(Business[] students)
       {
          double medium;
          double allSubjects = 0;
@@ -250,7 +250,7 @@ namespace Homework_6._3
       }
 
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
-      public static void AverageHigherScore(string path, Student[] student, double medium)
+      public static void AverageHigherScore(string path, Business[] student, double medium)
       {
          Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
@@ -267,7 +267,7 @@ namespace Homework_6._3
             i++;
          }
 
-         Student[] averageHigher = new Student[count];
+         Business[] averageHigher = new Business[count];
          int j = 0;
          int k = 0;
          while (j < student.Length)
@@ -301,7 +301,7 @@ namespace Homework_6._3
       }
 
       // Метод поиска несовершеннолетнего студента с худшим средним баллом
-      public static void MinorStudentWorstAverage(string path, Student[] student)
+      public static void MinorStudentWorstAverage(string path, Business[] student)
       {
          Console.WriteLine("Несовершеннолетние студенты:");
          // Возраст совершеннолетнего студента
@@ -321,7 +321,7 @@ namespace Homework_6._3
             i++;
          }
 
-         Student[] minor = new Student[count];
+         Business[] minor = new Business[count];
          int j = 0;
          int k = 0;
          while (j < student.Length)
@@ -394,7 +394,7 @@ namespace Homework_6._3
          }
 
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
-         Student worstAverage = minor[counter];
+         Business worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
@@ -407,7 +407,7 @@ namespace Homework_6._3
       }
 
       // Метод сортировки массива структур по возрасту
-      public static void BubbleSortByAge(Student[] students)
+      public static void BubbleSortByAge(Business[] students)
       {
          Console.WriteLine("Отсортированный массив структур по возрасту:");
          // Если нужно сортировать по другим критериям изменяем условие в сортировке:
@@ -424,7 +424,7 @@ namespace Homework_6._3
                if (students[j].Year > students[j + 1].Year)
                {
                   // Меняем местами структуры
-                  Student temp = students[j];
+                  Business temp = students[j];
                   students[j] = students[j + 1];
                   students[j + 1] = temp;
                }
@@ -438,7 +438,7 @@ namespace Homework_6._3
          int index = 0;
          while (index < students.Length)
          {
-            Student person = students[index];
+            Business person = students[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
