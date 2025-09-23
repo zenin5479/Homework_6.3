@@ -283,7 +283,7 @@ namespace Homework_6._3
          int i = 0;
          while (i < student.Length)
          {
-            int minorStudent = (currentDate - student[i].Year);
+            double minorStudent = (currentDate - student[i].Profit);
             if (minorStudent < underage)
             {
                count++;
@@ -297,12 +297,12 @@ namespace Homework_6._3
          int k = 0;
          while (j < student.Length)
          {
-            int minorStudent = (currentDate - student[j].Year);
+            double minorStudent = (currentDate - student[j].Profit);
             if (minorStudent < underage)
             {
                minor[k] = student[j];
                Console.WriteLine("{0} {1} {2} {3}",
-                  student[j].Company, student[j].Department, student[j].Profit, student[j].Dadsname);
+                  student[j].Company, student[j].Department, student[j].Profit);
                k++;
             }
 
@@ -315,7 +315,7 @@ namespace Homework_6._3
          double bySubjects;
          while (l < minor.Length)
          {
-            bySubjects = ((minor[l].Physics + minor[l].Math + minor[l].Inf) / 3.0f);
+            bySubjects = ((minor[l].Profit + minor[l].Profit + minor[l].Profit) / 3.0f);
             average[l] = bySubjects;
             l++;
          }
@@ -366,14 +366,14 @@ namespace Homework_6._3
 
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
          Business worstAverage = minor[counter];
-         Console.WriteLine("{0} {1} {2} {3}",
-            worstAverage.Company, worstAverage.Department, worstAverage.Profit, worstAverage.Dadsname);
+         Console.WriteLine("{0} {1} {2}",
+            worstAverage.Company, worstAverage.Department, worstAverage.Profit);
 
          // Запись структуры в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-         writer.WriteLine("{0} {1} {2} {3}",
-            worstAverage.Company, worstAverage.Department, worstAverage.Profit, worstAverage.Dadsname);
+         writer.WriteLine("{0} {1} {2}",
+            worstAverage.Company, worstAverage.Department, worstAverage.Profit);
          writer.Close();
       }
 
@@ -392,7 +392,7 @@ namespace Homework_6._3
             while (j < n - i - 1)
             {
                // Сравниваем соседние элементы
-               if (students[j].Year > students[j + 1].Year)
+               if (students[j].Profit > students[j + 1].Profit)
                {
                   // Меняем местами структуры
                   Business temp = students[j];
@@ -411,8 +411,7 @@ namespace Homework_6._3
          {
             Business person = students[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Company, person.Department, person.Profit, person.Dadsname, person.Year,
-               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+               person.Company, person.Department, person.Profit);
             index++;
          }
       }
