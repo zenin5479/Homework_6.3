@@ -90,7 +90,7 @@ namespace Homework_6._3
          while (i < readStudents.Length)
          {
             Business student = readStudents[i];
-            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+            Console.WriteLine("{0} {1} {2}",
                student.Company, student.Department, student.Profit);
             i++;
          }
@@ -106,7 +106,7 @@ namespace Homework_6._3
          while (j < readCadets.Length)
          {
             Business cadet = readCadets[j];
-            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+            Console.WriteLine("{0} {1} {2}",
                cadet.Company, cadet.Department, cadet.Profit);
             j++;
          }
