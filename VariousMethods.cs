@@ -261,19 +261,17 @@ namespace Homework_6._3
       }
 
       // Метод поиска несовершеннолетнего студента с худшим средним баллом
-      public static void MinorStudentWorstAverage(string path, Business[] student)
+      public static void MinorStudentWorstAverage(string path, Business[] firm)
       {
          Console.WriteLine("Несовершеннолетние студенты:");
          // Возраст совершеннолетнего студента
-         int underage = 18;
-         int currentDate = DateTime.Now.Year;
+         int underage = 20;
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
-         while (i < student.Length)
+         while (i < firm.Length)
          {
-            double minorStudent = (currentDate - student[i].Profit);
-            if (minorStudent < underage)
+            if (firm[i].Profit < underage)
             {
                count++;
             }
@@ -284,14 +282,12 @@ namespace Homework_6._3
          Business[] minor = new Business[count];
          int j = 0;
          int k = 0;
-         while (j < student.Length)
+         while (j < firm.Length)
          {
-            double minorStudent = (currentDate - student[j].Profit);
-            if (minorStudent < underage)
+            if (firm[i].Profit < underage)
             {
-               minor[k] = student[j];
-               Console.WriteLine("{0} {1} {2} {3}",
-                  student[j].Company, student[j].Department, student[j].Profit);
+               minor[k] = firm[j];
+               Console.WriteLine("{0} {1} {2}", firm[j].Company, firm[j].Department, firm[j].Profit);
                k++;
             }
 
@@ -339,11 +335,11 @@ namespace Homework_6._3
             }
 
             // Сравниваем значения double используя метод Equals(Double)
-            //if (average[n].Equals(min))
-            //{
-            //   counter = n;
-            //   flag = true;
-            //}
+            if (average[n].Equals(min))
+            {
+               counter = n;
+               flag = true;
+            }
 
             n++;
          }
