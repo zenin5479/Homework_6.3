@@ -53,7 +53,7 @@ namespace Homework_6._3
             },
             new Business
             {
-               Company = "РосГвардия", Department = "Охрана", Profit = 538.462
+               Company = "РосГвардия", Department = "Охрана", Profit = -538.462
             },
             new Business
             {
@@ -61,11 +61,11 @@ namespace Homework_6._3
             },
             new Business
             {
-               Company = "ТехноСервис", Department = "Ремонт", Profit = 28.823
+               Company = "ТехноСервис", Department = "Ремонт", Profit = -28.823
             },
             new Business
             {
-               Company = "ФинансИнвест", Department = "Кредитование", Profit = 200.921
+               Company = "ФинансИнвест", Department = "Кредитование", Profit = -200.921
             },
             new Business
             {
@@ -77,7 +77,7 @@ namespace Homework_6._3
             },
             new Business
             {
-               Company = "ТрансЭнерго", Department = "Производство", Profit = 420.634
+               Company = "ТрансЭнерго", Department = "Производство", Profit = -420.634
             }
          };
          // Запись массива структур в текстовый файл
