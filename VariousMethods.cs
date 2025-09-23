@@ -16,7 +16,7 @@ namespace Homework_6._3
          {
             Business person = students[i];
             writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Company, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
             i++;
          }
@@ -135,7 +135,7 @@ namespace Homework_6._3
                      countCharacter++;
                   }
 
-                  arrayStudent[row].Group = lineArray[0];
+                  arrayStudent[row].Company = lineArray[0];
                   arrayStudent[row].Surname = lineArray[1];
                   arrayStudent[row].Name = lineArray[2];
                   arrayStudent[row].Dadsname = lineArray[3];
@@ -168,7 +168,7 @@ namespace Homework_6._3
          {
             Business person = students[i];
             // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(person.Group);
+            writer.Write(person.Company);
             writer.Write(person.Surname);
             writer.Write(person.Name);
             writer.Write(person.Dadsname);
@@ -207,7 +207,7 @@ namespace Homework_6._3
             double grant = reader.ReadDouble();
             persons[i] = new Business
             {
-               Group = group,
+               Company = group,
                Surname = surname,
                Name = name,
                Dadsname = dadsname,
@@ -331,7 +331,7 @@ namespace Homework_6._3
             {
                minor[k] = student[j];
                Console.WriteLine("{0} {1} {2} {3}",
-                  student[j].Group, student[j].Surname, student[j].Name, student[j].Dadsname);
+                  student[j].Company, student[j].Surname, student[j].Name, student[j].Dadsname);
                k++;
             }
 
@@ -396,13 +396,13 @@ namespace Homework_6._3
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
          Business worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
-            worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+            worstAverage.Company, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
          // Запись структуры в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
          writer.WriteLine("{0} {1} {2} {3}",
-            worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+            worstAverage.Company, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
          writer.Close();
       }
 
@@ -440,7 +440,7 @@ namespace Homework_6._3
          {
             Business person = students[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Company, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
             index++;
          }
