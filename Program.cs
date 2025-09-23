@@ -41,53 +41,43 @@ namespace Homework_6._3
          {
             new Business
             {
-               Company = "IP-21", Department = "Иванов", Profit = "Иван", Dadsname = "Иванович",
-               Year = 2000, Gender = 'М', Physics = 4, Math = 5, Inf = 3, Grant = 5000
+               Company = "СтройГрад", Department = "Строительство", Profit = 125.589
             },
             new Business
             {
-               Company = "IP-21", Department = "Петрова", Profit = "Анна", Dadsname = "Сергеевна",
-               Year = 2001, Gender = 'Ж', Physics = 5, Math = 4, Inf = 5, Grant = 6000
+               Company = "АгроПром", Department = "Животноводство", Profit = 280.789
             },
             new Business
             {
-               Company = "IP-22", Department = "Смирнов", Profit = "Алексей", Dadsname = "Викторович",
-               Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
+               Company = "Сбер", Department = "Акции", Profit = 910.258
             },
             new Business
             {
-               Company = "Fiz-21", Department = "Кузнецова", Profit = "Мария", Dadsname = "Павловна",
-               Year = 2000, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 7000
+               Company = "РосГвардия", Department = "Охрана", Profit = 538.462
             },
             new Business
             {
-               Company = "Phys-22", Department = "Сидоров", Profit = "Дмитрий", Dadsname = "Андреевич",
-               Year = 2001, Gender = 'M', Physics = 4, Math = 3, Inf = 4, Grant = 4500
+               Company = "АлмазАнтей", Department = "Вооружение", Profit = 830.489
             },
             new Business
             {
-               Company = "IP-22", Department = "Васильева", Profit = "Екатерина", Dadsname = "Николаевна",
-               Year = 2008, Gender = 'Ж', Physics = 3, Math = 3, Inf = 3, Grant = 3000
+               Company = "ТехноСервис", Department = "Ремонт", Profit = 28.823
             },
             new Business
             {
-               Company = "Fiz-21", Department = "Орлов", Profit = "Сергей", Dadsname = "Владимирович",
-               Year = 2000, Gender = 'M', Physics = 4, Math = 4, Inf = 3, Grant = 3000
+               Company = "ФинансИнвест", Department = "Кредитование", Profit = 200.921
             },
             new Business
             {
-               Company = "IP-21", Department = "Лебедева", Profit = "Светлана", Dadsname = "Александровна",
-               Year = 2001, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 8000
+               Company = "Быстроход", Department = "Такси", Profit = 387.773
             },
             new Business
             {
-               Company = "Fiz-22", Department = "Николаев", Profit = "Андрей", Dadsname = "Сергеевич",
-               Year = 2008, Gender = 'M', Physics = 3, Math = 2, Inf = 3, Grant = 2500
+               Company = "НефтьСиб", Department = "Добыча", Profit = 875.537
             },
             new Business
             {
-               Company = "IP-22", Department = "Сергеева", Profit = "Дарья", Dadsname = "Викторовна",
-               Year = 2008, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 2000
+               Company = "ТрансЭнерго", Department = "Производство", Profit = 420.634
             }
          };
          // Запись массива структур в текстовый файл
