@@ -135,7 +135,7 @@ namespace Homework_6._3
 
                   arrayStudent[row].Company = lineArray[0];
                   arrayStudent[row].Department = lineArray[1];
-                  arrayStudent[row].Profit = lineArray[2];
+                  arrayStudent[row].Profit = Convert.ToDouble(lineArray[2]);
 
                   countCharacter = 0;
                }
