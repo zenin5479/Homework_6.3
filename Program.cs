@@ -83,13 +83,13 @@ namespace Homework_6._3
          // Запись массива структур в текстовый файл
          VariousMethods.WriteStructFileTxt(pathStruct, firm);
          // Чтение массива структур из текстового файла
-         Business[] readStudents = VariousMethods.ReadStructFileTxt(pathStruct, "hardstructure.txt");
+         Business[] readFirm = VariousMethods.ReadStructFileTxt(pathStruct, "hardstructure.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные из текстового файла:");
          int i = 0;
-         while (i < readStudents.Length)
+         while (i < readFirm.Length)
          {
-            Business student = readStudents[i];
+            Business student = readFirm[i];
             Console.WriteLine("{0} {1} {2}",
                student.Company, student.Department, student.Profit);
             i++;
@@ -97,16 +97,16 @@ namespace Homework_6._3
 
          Console.WriteLine();
          // Запись массива структур в бинарный файл
-         VariousMethods.WriteStructFileBin(pathWrite, readStudents);
+         VariousMethods.WriteStructFileBin(pathWrite, readFirm);
          // Чтение массива структур из бинарного файла
-         Business[] readCadets = VariousMethods.ReadStructFileBin(pathWrite);
+         Business[] readOrganization = VariousMethods.ReadStructFileBin(pathWrite);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные из бинарного файла:");
          int j = 0;
-         while (j < readCadets.Length)
+         while (j < readOrganization.Length)
          {
-            Business cadet = readCadets[j];
-            Console.WriteLine("{0} {1} {2}", cadet.Company, cadet.Department, cadet.Profit);
+            Business concern = readOrganization[j];
+            Console.WriteLine("{0} {1} {2}", concern.Company, concern.Department, concern.Profit);
             j++;
          }
          // Расчет среднего балла всех студентов по всем предметам
