@@ -201,6 +201,7 @@ namespace Homework_6._3
          {
             double bySubjects = firm[i].Profit;
             allSubjects += bySubjects;
+            i++;
          }
 
          medium = allSubjects / firm.Length;
@@ -235,7 +236,7 @@ namespace Homework_6._3
             if (bySubjects > medium)
             {
                averageHigher[k] = firm[j];
-               Console.WriteLine("{0} {1}", firm[j].Department, firm[j].Profit);
+               Console.WriteLine("{0} {1}", firm[j].Company, firm[j].Profit);
                k++;
             }
 
@@ -250,7 +251,7 @@ namespace Homework_6._3
          while (m < averageHigher.Length)
          {
             // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(averageHigher[m].Department);
+            writer.Write(averageHigher[m].Company);
             writer.Write(averageHigher[m].Profit);
             m++;
          }
