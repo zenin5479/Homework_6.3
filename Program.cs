@@ -91,8 +91,7 @@ namespace Homework_6._3
          {
             Business student = readStudents[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               student.Company, student.Department, student.Profit, student.Dadsname, student.Year,
-               student.Gender, student.Physics, student.Math, student.Inf, student.Grant);
+               student.Company, student.Department, student.Profit);
             i++;
          }
 
@@ -108,8 +107,7 @@ namespace Homework_6._3
          {
             Business cadet = readCadets[j];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               cadet.Company, cadet.Department, cadet.Profit, cadet.Dadsname, cadet.Year,
-               cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
+               cadet.Company, cadet.Department, cadet.Profit);
             j++;
          }
          // Расчет среднего балла всех студентов по всем предметам
