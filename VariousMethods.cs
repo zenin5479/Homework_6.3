@@ -16,7 +16,7 @@ namespace Homework_6._3
          {
             Business person = students[i];
             writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Company, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Company, person.Department, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
             i++;
          }
@@ -136,7 +136,7 @@ namespace Homework_6._3
                   }
 
                   arrayStudent[row].Company = lineArray[0];
-                  arrayStudent[row].Surname = lineArray[1];
+                  arrayStudent[row].Department = lineArray[1];
                   arrayStudent[row].Name = lineArray[2];
                   arrayStudent[row].Dadsname = lineArray[3];
                   arrayStudent[row].Year = int.Parse(lineArray[4]);
@@ -169,7 +169,7 @@ namespace Homework_6._3
             Business person = students[i];
             // Запись строки в UTF-8 с предварительной длиной
             writer.Write(person.Company);
-            writer.Write(person.Surname);
+            writer.Write(person.Department);
             writer.Write(person.Name);
             writer.Write(person.Dadsname);
             writer.Write(person.Year);
@@ -208,7 +208,7 @@ namespace Homework_6._3
             persons[i] = new Business
             {
                Company = group,
-               Surname = surname,
+               Department = surname,
                Name = name,
                Dadsname = dadsname,
                Year = year,
@@ -240,7 +240,7 @@ namespace Homework_6._3
             //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
             //   students[i].Surname, students[i].Name, bySubjects);
             Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
-               students[i].Surname, students[i].Name, bySubjects);
+               students[i].Department, students[i].Name, bySubjects);
             i++;
          }
 
@@ -276,7 +276,7 @@ namespace Homework_6._3
             if (bySubjects > medium)
             {
                averageHigher[k] = student[j];
-               Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+               Console.WriteLine("{0} {1}", student[j].Department, student[j].Name);
                k++;
             }
 
@@ -291,7 +291,7 @@ namespace Homework_6._3
          while (m < averageHigher.Length)
          {
             // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(averageHigher[m].Surname);
+            writer.Write(averageHigher[m].Department);
             writer.Write(averageHigher[m].Name);
             m++;
          }
@@ -331,7 +331,7 @@ namespace Homework_6._3
             {
                minor[k] = student[j];
                Console.WriteLine("{0} {1} {2} {3}",
-                  student[j].Company, student[j].Surname, student[j].Name, student[j].Dadsname);
+                  student[j].Company, student[j].Department, student[j].Name, student[j].Dadsname);
                k++;
             }
 
@@ -396,13 +396,13 @@ namespace Homework_6._3
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
          Business worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
-            worstAverage.Company, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+            worstAverage.Company, worstAverage.Department, worstAverage.Name, worstAverage.Dadsname);
 
          // Запись структуры в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
          writer.WriteLine("{0} {1} {2} {3}",
-            worstAverage.Company, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+            worstAverage.Company, worstAverage.Department, worstAverage.Name, worstAverage.Dadsname);
          writer.Close();
       }
 
@@ -440,7 +440,7 @@ namespace Homework_6._3
          {
             Business person = students[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Company, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Company, person.Department, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
             index++;
          }
