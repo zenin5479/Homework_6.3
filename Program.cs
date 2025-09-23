@@ -37,7 +37,7 @@ namespace Homework_6._3
          string fileInput = "finish.txt";
 
          // Создание массива структур
-         Business[] students =
+         Business[] firm =
          {
             new Business
             {
@@ -81,7 +81,7 @@ namespace Homework_6._3
             }
          };
          // Запись массива структур в текстовый файл
-         VariousMethods.WriteStructFileTxt(pathStruct, students);
+         VariousMethods.WriteStructFileTxt(pathStruct, firm);
          // Чтение массива структур из текстового файла
          Business[] readStudents = VariousMethods.ReadStructFileTxt(pathStruct, "hardstructure.txt");
          // Вывод прочитанных данных
@@ -111,13 +111,13 @@ namespace Homework_6._3
          }
          // Расчет среднего балла всех студентов по всем предметам
          Console.WriteLine();
-         double average = VariousMethods.AverageScore(students);
+         double average = VariousMethods.AverageScore(firm);
          // Поиск студентов средний балл которых выше, чем общий средний балл
          Console.WriteLine();
-         VariousMethods.AverageHigherScore(pathRead, students, average);
+         VariousMethods.AverageHigherScore(pathRead, firm, average);
          // Поиск несовершеннолетнего студента с худшим средним баллом
          Console.WriteLine();
-         VariousMethods.MinorStudentWorstAverage(fileInput, students);
+         VariousMethods.MinorStudentWorstAverage(fileInput, firm);
       }
    }
 }
