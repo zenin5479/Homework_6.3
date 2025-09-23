@@ -89,9 +89,9 @@ namespace Homework_6._3
          int i = 0;
          while (i < readFirm.Length)
          {
-            Business student = readFirm[i];
+            Business biz = readFirm[i];
             Console.WriteLine("{0} {1} {2}",
-               student.Company, student.Department, student.Profit);
+               biz.Company, biz.Department, biz.Profit);
             i++;
          }
 
