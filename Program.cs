@@ -106,8 +106,7 @@ namespace Homework_6._3
          while (j < readCadets.Length)
          {
             Business cadet = readCadets[j];
-            Console.WriteLine("{0} {1} {2}",
-               cadet.Company, cadet.Department, cadet.Profit);
+            Console.WriteLine("{0} {1} {2}", cadet.Company, cadet.Department, cadet.Profit);
             j++;
          }
          // Расчет среднего балла всех студентов по всем предметам

@@ -15,9 +15,7 @@ namespace Homework_6._3
          while (i < students.Length)
          {
             Business person = students[i];
-            writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Company, person.Department, person.Profit, person.Dadsname, person.Year,
-               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+            writer.WriteLine("{0} {1} {2}", person.Company, person.Department, person.Profit);
             i++;
          }
 
@@ -138,13 +136,6 @@ namespace Homework_6._3
                   arrayStudent[row].Company = lineArray[0];
                   arrayStudent[row].Department = lineArray[1];
                   arrayStudent[row].Profit = lineArray[2];
-                  arrayStudent[row].Dadsname = lineArray[3];
-                  arrayStudent[row].Year = int.Parse(lineArray[4]);
-                  arrayStudent[row].Gender = char.Parse(lineArray[5]);
-                  arrayStudent[row].Physics = int.Parse(lineArray[6]);
-                  arrayStudent[row].Math = int.Parse(lineArray[7]);
-                  arrayStudent[row].Inf = int.Parse(lineArray[8]);
-                  arrayStudent[row].Grant = double.Parse(lineArray[9]);
 
                   countCharacter = 0;
                }
@@ -171,13 +162,6 @@ namespace Homework_6._3
             writer.Write(person.Company);
             writer.Write(person.Department);
             writer.Write(person.Profit);
-            writer.Write(person.Dadsname);
-            writer.Write(person.Year);
-            writer.Write(person.Gender);
-            writer.Write(person.Physics);
-            writer.Write(person.Math);
-            writer.Write(person.Inf);
-            writer.Write(person.Grant);
             i++;
          }
 
