@@ -100,7 +100,7 @@ namespace Homework_6._3
          // Запись массива структур в текстовый файл
          VariousMethods.WriteStructFileTxt(pathStruct, students);
          // Чтение массива структур из текстового файла
-         Student[] readStudents = VariousMethods.ReadStructFileTxt(pathStruct, "spisok.txt");
+         Student[] readStudents = VariousMethods.ReadStructFileTxt(pathStruct, "hardstructure.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные из текстового файла:");
          int i = 0;
