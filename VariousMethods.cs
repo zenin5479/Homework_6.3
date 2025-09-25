@@ -209,7 +209,7 @@ namespace Homework_6._3
          return medium;
       }
 
-      // Метод поиска подразделений профицит которых выше, чем средний профицит
+      // Метод поиска прибыльных и убыточных подразделений
       public static void ProfitAnalysis(string path, Business[] firm)
       {
          //Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
