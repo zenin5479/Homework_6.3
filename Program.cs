@@ -109,13 +109,13 @@ namespace Homework_6._3
             Console.WriteLine("{0} {1} {2}", concern.Company, concern.Department, concern.Profit);
             j++;
          }
-         // Расчет среднего балла всех студентов по всем предметам
+         // Расчет среднего профицита по всем подразделениям
          Console.WriteLine();
          double average = VariousMethods.AverageScore(firm);
-         // Поиск студентов средний балл которых выше, чем общий средний балл
+         // Поиск подразделений профицит которых выше, чем средний профицит
          Console.WriteLine();
          VariousMethods.AverageHigherScore(pathRead, firm, average);
-         // Поиск студентов средний балл которых выше, чем общий средний балл
+         // Поиск подразделений профицит которых ниже, чем средний профицит
          Console.WriteLine();
          VariousMethods.AverageLowScore(pathRead, firm, average);
 
