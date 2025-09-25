@@ -213,7 +213,7 @@ namespace Homework_6._3
       public static void AverageHigherScore(string path, Business[] firm, double medium)
       {
          Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
-         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
+         // Определяем количество подразделений удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
          while (i < firm.Length)
@@ -263,8 +263,8 @@ namespace Homework_6._3
       // Метод поиска подразделений профицит которых ниже, чем средний профицит
       public static void AverageLowScore(string path, Business[] firm, double medium)
       {
-         Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
-         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
+         Console.WriteLine("Подразделения профицит которых ниже, чем средний профицит:");
+         // Определяем количество подразделений удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
          while (i < firm.Length)
@@ -284,7 +284,7 @@ namespace Homework_6._3
          while (j < firm.Length)
          {
             double bySubjects = firm[j].Profit;
-            if (bySubjects > medium)
+            if (bySubjects < medium)
             {
                averageHigher[k] = firm[j];
                Console.WriteLine("{0} {1}", firm[j].Company, firm[j].Profit);
