@@ -192,7 +192,7 @@ namespace Homework_6._3
       }
 
       // Метод поиска прибыльных и убыточных подразделений
-      public static void ProfitAnalysis(string path, Business[] firm)
+      public static void ProfitAnalysis(Business[] firm)
       {
          //Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
          // Определяем количество подразделений удовлетворяющих условию для расчета размера массива структур
@@ -226,40 +226,8 @@ namespace Homework_6._3
             Console.WriteLine("Прибыльных {0} и убыточных {1} подразделений поровну", profitHigher, profitLow);
          }
 
+         // Запись строки в текстовый файл
 
-         Console.WriteLine("{0} {1}", firm[i].Company, firm[i].Profit);
-
-         Business[] averageHigher = new Business[profitHigher];
-         int j = 0;
-         int k = 0;
-         while (j < firm.Length)
-         {
-            double bySubjects = firm[j].Profit;
-            if (bySubjects > 0)
-            {
-               averageHigher[k] = firm[j];
-
-               k++;
-            }
-
-            j++;
-         }
-
-         // Запись массива структур в бинарный файл
-         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         writer.Write(averageHigher.Length);
-         int m = 0;
-         while (m < averageHigher.Length)
-         {
-            // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(averageHigher[m].Company);
-            writer.Write(averageHigher[m].Profit);
-            m++;
-         }
-
-         stream.Close();
-         writer.Close();
       }
 
       // Метод расчета среднего профицита по всем подразделениям
@@ -519,6 +487,23 @@ namespace Homework_6._3
                person.Company, person.Department, person.Profit);
             index++;
          }
+      }
+
+      // Метод записи массива строк в текстовый файл
+      public static void FileWriteArrayString(string path, string[] arrayString, string nameFile)
+      {
+         // Запись массива строк в файл
+         Console.WriteLine("Запись массива строк в файл {0}", nameFile);
+         File.WriteAllLines(path, arrayString);
+      }
+
+      // Метод записи строки в текстовый файл
+      public static void FileWriteArrayString(string path, string line)
+      {
+         // Создание одномерного массива строк string[] для записи в файл строки
+         string[] stringArray = { line };
+         // Запись массива строк в файл
+         File.WriteAllLines(path, stringArray);
       }
    }
 }

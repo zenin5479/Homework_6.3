@@ -109,19 +109,8 @@ namespace Homework_6._3
             Console.WriteLine("{0} {1} {2}", concern.Company, concern.Department, concern.Profit);
             j++;
          }
-         // Расчет среднего профицита по всем подразделениям
-         Console.WriteLine();
-         double average = VariousMethods.AverageScore(firm);
-         // Поиск подразделений профицит которых выше, чем средний профицит
-         Console.WriteLine();
-         VariousMethods.AverageHigherScore(pathRead, firm, average);
-         // Поиск подразделений профицит которых ниже, чем средний профицит
-         Console.WriteLine();
-         VariousMethods.AverageLowScore(pathRead, firm, average);
-
-         // Поиск несовершеннолетнего студента с худшим средним баллом
-         //Console.WriteLine();
-         //VariousMethods.MinorStudentWorstAverage(fileInput, firm);
+         // Поиска прибыльных и убыточных подразделений
+         VariousMethods.ProfitAnalysis(readOrganization);
 
          Console.ReadKey();
       }
