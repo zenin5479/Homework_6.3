@@ -209,7 +209,7 @@ namespace Homework_6._3
          return medium;
       }
 
-      // Метод поиска подразделений профицит которых выше, чем средний профицит по всем подразделениям
+      // Метод поиска подразделений профицит которых выше, чем средний профицит
       public static void AverageHigherScore(string path, Business[] firm, double medium)
       {
          Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
