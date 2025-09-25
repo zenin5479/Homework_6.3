@@ -210,6 +210,57 @@ namespace Homework_6._3
       }
 
       // Метод поиска подразделений профицит которых выше, чем средний профицит
+      public static void AverageHigherScore(string path, Business[] firm)
+      {
+         Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
+         // Определяем количество подразделений удовлетворяющих условию для расчета размера массива структур
+         int count = 0;
+         int i = 0;
+         while (i < firm.Length)
+         {
+            double bySubjects = firm[i].Profit;
+            if (bySubjects > medium)
+            {
+               count++;
+            }
+
+            i++;
+         }
+
+         Business[] averageHigher = new Business[count];
+         int j = 0;
+         int k = 0;
+         while (j < firm.Length)
+         {
+            double bySubjects = firm[j].Profit;
+            if (bySubjects > medium)
+            {
+               averageHigher[k] = firm[j];
+               Console.WriteLine("{0} {1}", firm[j].Company, firm[j].Profit);
+               k++;
+            }
+
+            j++;
+         }
+
+         // Запись массива структур в бинарный файл
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         writer.Write(averageHigher.Length);
+         int m = 0;
+         while (m < averageHigher.Length)
+         {
+            // Запись строки в UTF-8 с предварительной длиной
+            writer.Write(averageHigher[m].Company);
+            writer.Write(averageHigher[m].Profit);
+            m++;
+         }
+
+         stream.Close();
+         writer.Close();
+      }
+
+      // Метод поиска подразделений профицит которых выше, чем средний профицит
       public static void AverageHigherScore(string path, Business[] firm, double medium)
       {
          Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
