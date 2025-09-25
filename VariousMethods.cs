@@ -201,15 +201,33 @@ namespace Homework_6._3
          int i = 0;
          while (i < firm.Length)
          {
-            double bySubjects = firm[i].Profit;
-            if (bySubjects > 0)
+            if (firm[i].Profit > 0)
             {
                profitHigher++;
             }
+            else
+            {
+               profitLow++;
+            }
 
-            Console.WriteLine("{0} {1}", firm[i].Company, firm[i].Profit);
             i++;
          }
+
+         if (profitHigher > profitLow)
+         {
+            Console.WriteLine("Прибыльных подразделений {0} больше чем убыточных {1}", profitHigher, profitLow);
+         }
+         if (profitHigher < profitLow)
+         {
+            Console.WriteLine("Убыточных подразделений {0} больше чем прибыльных {1}", profitLow, profitHigher);
+         }
+         if (profitHigher == profitLow)
+         {
+            Console.WriteLine("Прибыльных {0} и убыточных {1} подразделений поровну", profitHigher, profitLow);
+         }
+
+
+         Console.WriteLine("{0} {1}", firm[i].Company, firm[i].Profit);
 
          Business[] averageHigher = new Business[profitHigher];
          int j = 0;
@@ -243,7 +261,7 @@ namespace Homework_6._3
          stream.Close();
          writer.Close();
       }
-      
+
       // Метод расчета среднего профицита по всем подразделениям
       public static double AverageScore(Business[] firm)
       {
