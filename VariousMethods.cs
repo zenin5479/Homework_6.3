@@ -191,7 +191,7 @@ namespace Homework_6._3
          return firm;
       }
 
-      // Метод расчета среднего балла всех студентов по всем предметам
+      // Метод расчета среднего профицита по всем фирмам
       public static double AverageScore(Business[] firm)
       {
          double medium;
@@ -205,7 +205,7 @@ namespace Homework_6._3
          }
 
          medium = allSubjects / firm.Length;
-         Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
+         Console.WriteLine("Средний профицит по всем фирмам: {0:f}", medium);
          return medium;
       }
 
