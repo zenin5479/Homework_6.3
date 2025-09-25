@@ -210,33 +210,35 @@ namespace Homework_6._3
       }
 
       // Метод поиска подразделений профицит которых выше, чем средний профицит
-      public static void AverageHigherScore(string path, Business[] firm)
+      public static void ProfitAnalysis(string path, Business[] firm)
       {
-         Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
+         //Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
          // Определяем количество подразделений удовлетворяющих условию для расчета размера массива структур
-         int count = 0;
+         int profitHigher = 0;
+         int profitLow = 0;
          int i = 0;
          while (i < firm.Length)
          {
             double bySubjects = firm[i].Profit;
-            if (bySubjects > medium)
+            if (bySubjects > 0)
             {
-               count++;
+               profitHigher++;
             }
 
+            Console.WriteLine("{0} {1}", firm[i].Company, firm[i].Profit);
             i++;
          }
 
-         Business[] averageHigher = new Business[count];
+         Business[] averageHigher = new Business[profitHigher];
          int j = 0;
          int k = 0;
          while (j < firm.Length)
          {
             double bySubjects = firm[j].Profit;
-            if (bySubjects > medium)
+            if (bySubjects > 0)
             {
                averageHigher[k] = firm[j];
-               Console.WriteLine("{0} {1}", firm[j].Company, firm[j].Profit);
+
                k++;
             }
 
