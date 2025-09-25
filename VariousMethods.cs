@@ -191,7 +191,7 @@ namespace Homework_6._3
          return firm;
       }
 
-      // Метод расчета среднего профицита по всем фирмам
+      // Метод расчета среднего профицита по всем подразделениям
       public static double AverageScore(Business[] firm)
       {
          double medium;
@@ -205,14 +205,14 @@ namespace Homework_6._3
          }
 
          medium = allSubjects / firm.Length;
-         Console.WriteLine("Средний профицит по всем фирмам: {0:f}", medium);
+         Console.WriteLine("Средний профицит по всем подразделениям: {0:f}", medium);
          return medium;
       }
 
-      // Метод поиска студентов средний балл которых выше, чем общий средний балл
+      // Метод поиска подразделений профицит которых выше, чем средний профицит по всем подразделениям
       public static void AverageHigherScore(string path, Business[] firm, double medium)
       {
-         Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
+         Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
