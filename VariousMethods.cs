@@ -191,24 +191,6 @@ namespace Homework_6._3
          return firm;
       }
 
-      // Метод расчета среднего профицита по всем подразделениям
-      public static double AverageScore(Business[] firm)
-      {
-         double medium;
-         double allSubjects = 0;
-         int i = 0;
-         while (i < firm.Length)
-         {
-            double bySubjects = firm[i].Profit;
-            allSubjects += bySubjects;
-            i++;
-         }
-
-         medium = allSubjects / firm.Length;
-         Console.WriteLine("Средний профицит по всем подразделениям: {0:f}", medium);
-         return medium;
-      }
-
       // Метод поиска прибыльных и убыточных подразделений
       public static void ProfitAnalysis(string path, Business[] firm)
       {
@@ -260,6 +242,24 @@ namespace Homework_6._3
 
          stream.Close();
          writer.Close();
+      }
+      
+      // Метод расчета среднего профицита по всем подразделениям
+      public static double AverageScore(Business[] firm)
+      {
+         double medium;
+         double allSubjects = 0;
+         int i = 0;
+         while (i < firm.Length)
+         {
+            double bySubjects = firm[i].Profit;
+            allSubjects += bySubjects;
+            i++;
+         }
+
+         medium = allSubjects / firm.Length;
+         Console.WriteLine("Средний профицит по всем подразделениям: {0:f}", medium);
+         return medium;
       }
 
       // Метод поиска подразделений профицит которых выше, чем средний профицит
