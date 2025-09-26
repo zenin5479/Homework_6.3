@@ -110,7 +110,7 @@ namespace Homework_6._3
          }
          // Поиска прибыльных и убыточных подразделений
          string hj = VariousMethods.ProfitAnalysis(readOrganization);
-         VariousMethods.FileWriteArrayString(fileInput, hj);
+         VariousMethods.FileWriteArrayString(pathInput, hj);
 
 
 
