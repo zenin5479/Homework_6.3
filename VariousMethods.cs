@@ -192,7 +192,7 @@ namespace Homework_6._3
       }
 
       // Метод поиска прибыльных и убыточных подразделений
-      public static void ProfitAnalysis(Business[] firm)
+      public static string ProfitAnalysis(Business[] firm)
       {
          //Console.WriteLine("Подразделения профицит которых выше, чем средний профицит:");
          // Определяем количество подразделений удовлетворяющих условию для расчета размера массива структур
@@ -232,7 +232,7 @@ namespace Homework_6._3
          // Запись строки в текстовый файл
 
 
-
+         return null;
       }
 
       // Метод расчета среднего профицита по всем подразделениям
