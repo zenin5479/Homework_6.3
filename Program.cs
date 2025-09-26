@@ -115,6 +115,8 @@ namespace Homework_6._3
          VariousMethods.FileWriteArrayString(pathInput, analysis);
          Console.WriteLine();
 
+         string anal = VariousMethods.ProfitMax(readOrganization);
+
          Console.ReadKey();
       }
    }

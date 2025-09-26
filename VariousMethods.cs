@@ -241,20 +241,20 @@ namespace Homework_6._3
          // Определяем подразделение с наибольшим профицитом 
          // Cчитаем, что максимум - это первый элемент строки
          double max = firm[0].Profit;
-         string 
+         string company = firm[0].Company;
          int row = 0;
          while (row < firm.Length)
          {
             if (max < firm[row].Profit)
             {
                max = firm[row].Profit;
+               company = firm[row].Company;
             }
 
             row++;
          }
 
-         string higher = "Подразделение с наибольшим профицитом " + " " + max + " ";
-
+         string higher = "Подразделение с наибольшим профицитом: " + max + " - " + company;
          Console.WriteLine(higher);
 
          return higher;
