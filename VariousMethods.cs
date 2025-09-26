@@ -263,18 +263,6 @@ namespace Homework_6._3
             Console.WriteLine(higher);
             result = higher;
          }
-         if (profitHigher < profitLow)
-         {
-            string low = "Убыточных подразделений " + profitLow + " больше чем прибыльных " + profitHigher;
-            Console.WriteLine(low);
-            result = low;
-         }
-         if (profitHigher == profitLow)
-         {
-            string equally = "Прибыльных " + profitHigher + " и убыточных " + profitLow + " подразделений поровну";
-            Console.WriteLine(equally);
-            result = equally;
-         }
 
          return result;
       }
