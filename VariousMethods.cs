@@ -259,7 +259,6 @@ namespace Homework_6._3
          return higher;
       }
 
-
       // Метод расчета среднего профицита по всем подразделениям
       public static double AverageScore(Business[] firm)
       {
