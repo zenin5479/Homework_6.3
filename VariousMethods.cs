@@ -238,33 +238,29 @@ namespace Homework_6._3
       // Метод поиска подразделения с наибольшим профицитом 
       public static string ProfitMax(Business[] firm)
       {
-         // Определяем количество прибыльных и убыточных подразделений
-         int profitHigher = 0;
-         int profitLow = 0;
-         int i = 0;
-         while (i < firm.Length)
+         // Определяем подразделение с наибольшим профицитом 
+         // Cчитаем, что максимум - это первый элемент строки
+         double max = firm[0].Profit;
+         int column = 0;
+         while (column < firm.Length)
          {
-            if (firm[i].Profit > 0)
+            if (max < firm[column].Profit)
             {
-               profitHigher++;
-            }
-            else
-            {
-               profitLow++;
+               max = firm[column].Profit;
             }
 
-            i++;
+            column++;
          }
 
-         string result = null;
-         if (profitHigher > profitLow)
-         {
-            string higher = "Прибыльных подразделений " + profitHigher + " больше чем убыточных " + profitLow;
-            Console.WriteLine(higher);
-            result = higher;
-         }
+         string higher = "Прибыльных подразделений " + profitHigher + " больше чем убыточных " + profitLow;
+         Console.WriteLine(higher);
 
-         return result;
+
+         Console.WriteLine("Максимум в массиве {0} равен: {1}", nameArray, max);
+
+
+
+         return higher;
       }
 
 

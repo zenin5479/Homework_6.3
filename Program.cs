@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Channels;
 
 // Обработка данных сложной структуры
 // Заданы структура данных и требуемый результат
