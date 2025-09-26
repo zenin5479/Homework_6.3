@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryForStruct;
+using System;
 using System.IO;
 
 // Обработка данных сложной структуры
@@ -16,14 +17,6 @@ using System.IO;
 
 namespace Homework_6._3
 {
-   // Определяем структуру
-   public struct Business
-   {
-      public string Company;
-      public string Department;
-      public double Profit;
-   }
-
    internal class Program
    {
       static void Main(string[] args)
@@ -36,59 +29,59 @@ namespace Homework_6._3
          string pathInput = Path.GetFullPath(fileInput);
 
          // Создание массива структур
-         Business[] firm =
+         VariousMethodsForStructBusiness.Business[] firm =
          {
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "СтройГрад", Department = "Строительство", Profit = 125.589
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "АгроПром", Department = "Животноводство", Profit = 280.789
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "Сбер", Department = "Акции", Profit = 910.258
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "РосГвардия", Department = "Охрана", Profit = -538.462
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "АлмазАнтей", Department = "Вооружение", Profit = 830.489
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "ТехноСервис", Department = "Ремонт", Profit = -28.823
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "ФинансИнвест", Department = "Кредитование", Profit = -200.921
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "Быстроход", Department = "Такси", Profit = 387.773
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "НефтьСиб", Department = "Добыча", Profit = 875.537
             },
-            new Business
+            new VariousMethodsForStructBusiness.Business
             {
                Company = "ТрансЭнерго", Department = "Производство", Profit = -420.634
             }
          };
          // Запись массива структур в текстовый файл
-         VariousMethods.WriteStructFileTxt(pathStruct, firm);
+         VariousMethodsForStructBusiness.WriteStructFileTxt(pathStruct, firm);
          // Чтение массива структур из текстового файла
-         Business[] readFirm = VariousMethods.ReadStructFileTxt(pathStruct, "hardstructure.txt");
+         VariousMethodsForStructBusiness.Business[] readFirm = VariousMethodsForStructBusiness.ReadStructFileTxt(pathStruct, "hardstructure.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные из текстового файла:");
          int i = 0;
          while (i < readFirm.Length)
          {
-            Business biz = readFirm[i];
+            VariousMethodsForStructBusiness.Business biz = readFirm[i];
             Console.WriteLine("{0} {1} {2}",
                biz.Company, biz.Department, biz.Profit);
             i++;
@@ -96,27 +89,27 @@ namespace Homework_6._3
 
          Console.WriteLine();
          // Запись массива структур в бинарный файл
-         VariousMethods.WriteStructFileBin(pathWrite, readFirm);
+         VariousMethodsForStructBusiness.WriteStructFileBin(pathWrite, readFirm);
          // Чтение массива структур из бинарного файла
-         Business[] readOrganization = VariousMethods.ReadStructFileBin(pathWrite);
+         VariousMethodsForStructBusiness.Business[] readOrganization = VariousMethodsForStructBusiness.ReadStructFileBin(pathWrite);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные из бинарного файла:");
          int j = 0;
          while (j < readOrganization.Length)
          {
-            Business concern = readOrganization[j];
+            VariousMethodsForStructBusiness.Business concern = readOrganization[j];
             Console.WriteLine("{0} {1} {2}", concern.Company, concern.Department, concern.Profit);
             j++;
          }
          Console.WriteLine();
 
          // Поиска прибыльных и убыточных подразделений
-         string analysis = VariousMethods.ProfitAnalysis(readOrganization);
-         VariousMethods.FileWriteArrayString(pathInput, analysis);
+         string analysis = VariousMethodsForStructBusiness.ProfitAnalysis(readOrganization);
+         VariousMethodsForStructBusiness.FileWriteArrayString(pathInput, analysis);
          Console.WriteLine();
 
-         string anal = VariousMethods.ProfitMax(readOrganization);
-         VariousMethods.FileAppendStringArray(pathInput, anal);
+         string anal = VariousMethodsForStructBusiness.ProfitMax(readOrganization);
+         VariousMethodsForStructBusiness.FileAppendStringArray(pathInput, anal);
 
          Console.ReadKey();
       }
