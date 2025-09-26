@@ -112,6 +112,8 @@ namespace Homework_6._3
          // Поиска прибыльных и убыточных подразделений
          VariousMethods.ProfitAnalysis(readOrganization);
 
+
+
          Console.ReadKey();
       }
    }
