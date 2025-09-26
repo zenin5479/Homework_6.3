@@ -220,11 +220,13 @@ namespace Homework_6._3
          }
          if (profitHigher < profitLow)
          {
-            Console.WriteLine("Убыточных подразделений {0} больше чем прибыльных {1}", profitLow, profitHigher);
+            string low = "Убыточных подразделений " + profitLow + " больше чем прибыльных " + profitHigher;
+            Console.WriteLine(low);
          }
          if (profitHigher == profitLow)
          {
-            Console.WriteLine("Прибыльных {0} и убыточных {1} подразделений поровну", profitHigher, profitLow);
+            string equally = "Прибыльных " + profitHigher + " и убыточных " + profitLow + " подразделений поровну";
+            Console.WriteLine(equally);
          }
 
          // Запись строки в текстовый файл
