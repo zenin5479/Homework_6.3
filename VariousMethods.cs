@@ -256,7 +256,6 @@ namespace Homework_6._3
 
          string higher = "Подразделение с наибольшим профицитом: " + max + " - " + company;
          Console.WriteLine(higher);
-
          return higher;
       }
 
