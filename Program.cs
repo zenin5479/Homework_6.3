@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Channels;
 
 // Обработка данных сложной структуры
 // Заданы структура данных и требуемый результат
@@ -108,11 +109,12 @@ namespace Homework_6._3
             Console.WriteLine("{0} {1} {2}", concern.Company, concern.Department, concern.Profit);
             j++;
          }
+         Console.WriteLine();
+
          // Поиска прибыльных и убыточных подразделений
-         string hj = VariousMethods.ProfitAnalysis(readOrganization);
-         VariousMethods.FileWriteArrayString(pathInput, hj);
-
-
+         string analysis = VariousMethods.ProfitAnalysis(readOrganization);
+         VariousMethods.FileWriteArrayString(pathInput, analysis);
+         Console.WriteLine();
 
          Console.ReadKey();
       }
