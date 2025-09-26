@@ -6,4 +6,10 @@
     <RootNamespace>Homework_6._3</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="LibraryForStruct">
+      <HintPath>bin\Debug\netcoreapp3.1\LibraryForStruct.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
