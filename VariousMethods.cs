@@ -241,6 +241,7 @@ namespace Homework_6._3
          // Определяем подразделение с наибольшим профицитом 
          // Cчитаем, что максимум - это первый элемент строки
          double max = firm[0].Profit;
+         string 
          int row = 0;
          while (row < firm.Length)
          {
