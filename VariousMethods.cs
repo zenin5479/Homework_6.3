@@ -505,5 +505,14 @@ namespace Homework_6._3
          // Запись массива строк в файл
          File.WriteAllLines(path, stringArray);
       }
+
+      // Метод   записи строки в текстовый файл
+      public static void FileAppendStringArray(string path, string line)
+      {
+         // Создание одномерного массива строк string[] для записи в файл строки
+         string[] stringArray = { line };
+         // Добавление массива строк в файл
+         File.AppendAllLines(path, stringArray);
+      }
    }
 }
