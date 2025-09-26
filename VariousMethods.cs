@@ -252,7 +252,7 @@ namespace Homework_6._3
             row++;
          }
 
-         string higher = "Подразделение с наибольшим профицитом " + " " + max + " больше чем убыточных ";
+         string higher = "Подразделение с наибольшим профицитом " + " " + max + " ";
 
          Console.WriteLine(higher);
 
