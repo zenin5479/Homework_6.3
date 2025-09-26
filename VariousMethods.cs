@@ -241,15 +241,15 @@ namespace Homework_6._3
          // Определяем подразделение с наибольшим профицитом 
          // Cчитаем, что максимум - это первый элемент строки
          double max = firm[0].Profit;
-         int column = 0;
-         while (column < firm.Length)
+         int row = 0;
+         while (row < firm.Length)
          {
-            if (max < firm[column].Profit)
+            if (max < firm[row].Profit)
             {
-               max = firm[column].Profit;
+               max = firm[row].Profit;
             }
 
-            column++;
+            row++;
          }
 
          string higher = "Прибыльных подразделений "  + " больше чем убыточных ";
