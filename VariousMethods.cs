@@ -239,7 +239,7 @@ namespace Homework_6._3
       public static string ProfitMax(Business[] firm)
       {
          // Определяем подразделение с наибольшим профицитом 
-         // Cчитаем, что максимум - это первый элемент строки
+         // Cчитаем, что максимум - это первый элемент структуры
          double max = firm[0].Profit;
          string company = firm[0].Company;
          int row = 0;
