@@ -252,14 +252,9 @@ namespace Homework_6._3
             column++;
          }
 
-         string higher = "Прибыльных подразделений " + profitHigher + " больше чем убыточных " + profitLow;
+         string higher = "Прибыльных подразделений "  + " больше чем убыточных ";
          Console.WriteLine(higher);
-
-
-         Console.WriteLine("Максимум в массиве {0} равен: {1}", nameArray, max);
-
-
-
+         
          return higher;
       }
 
