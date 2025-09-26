@@ -216,9 +216,7 @@ namespace Homework_6._3
          if (profitHigher > profitLow)
          {
             string higher = "Прибыльных подразделений " + profitHigher + " больше чем убыточных " + profitLow;
-
-
-            //Console.WriteLine("Прибыльных подразделений {0} больше чем убыточных {1}", profitHigher, profitLow);
+            Console.WriteLine(higher);
          }
          if (profitHigher < profitLow)
          {
