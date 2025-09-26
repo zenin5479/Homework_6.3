@@ -30,11 +30,10 @@ namespace Homework_6._3
       {
          string fileEnter = "hardstructure.txt";
          string pathStruct = Path.GetFullPath(fileEnter);
-         string writeStruct = "writestruct.bin";
+         string writeStruct = "hardstructure.bin";
          string pathWrite = Path.GetFullPath(writeStruct);
-         string readStruct = "readstruct.bin";
-         string pathRead = Path.GetFullPath(readStruct);
          string fileInput = "finish.txt";
+         string pathInput = Path.GetFullPath(fileInput);
 
          // Создание массива структур
          Business[] firm =
@@ -110,7 +109,8 @@ namespace Homework_6._3
             j++;
          }
          // Поиска прибыльных и убыточных подразделений
-         VariousMethods.ProfitAnalysis(readOrganization);
+         string hj = VariousMethods.ProfitAnalysis(readOrganization);
+         VariousMethods.FileWriteArrayString(fileInput, hj);
 
 
 
