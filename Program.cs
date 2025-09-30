@@ -1,5 +1,4 @@
-﻿using LibraryForStruct;
-using System;
+﻿using System;
 using System.IO;
 
 // Обработка данных сложной структуры
@@ -17,6 +16,15 @@ using System.IO;
 
 namespace Homework_6._3
 {
+   // Определяем структуру
+   public struct Business
+   {
+      public string Company;
+      public string Department;
+      public double Profit;
+   }
+
+
    internal class Program
    {
       static void Main()

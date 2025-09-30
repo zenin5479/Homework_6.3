@@ -6,14 +6,6 @@ namespace Homework_6._3
 {
    public class MethodsForStruct
    {
-      // Определяем структуру
-      public struct Business
-      {
-         public string Company;
-         public string Department;
-         public double Profit;
-      }
-
       // Метод записи массива структур в текстовый файл
       public static void WriteStructFileTxt(string path, Business[] firm)
       {
