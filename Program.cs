@@ -24,7 +24,6 @@ namespace Homework_6._3
       public double Profit;
    }
 
-
    internal class Program
    {
       static void Main()
