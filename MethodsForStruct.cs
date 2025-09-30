@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Homework_6._3
 {
-   public class VariousMethodsForStructBusiness
+   public class MethodsForStruct
    {
       // Определяем структуру
       public struct Business
